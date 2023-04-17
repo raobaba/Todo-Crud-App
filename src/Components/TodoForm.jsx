@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function TodoForm() {
-  return (
-    <div>
-      Todo Form
-    </div>
-  )
+    const handleChange = (e)=>{
+        console.log(e.target.value);
+    }
+    return (
+        <div className='form'>
+            <input 
+            placeholder='Enter Your Todo here...' 
+            className='input'
+            onChange={handleChange}
+            />
+        </div>
+    )
 }
