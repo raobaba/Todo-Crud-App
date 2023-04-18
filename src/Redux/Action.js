@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ADDNEW_TODO } from './actionType.js';
+import { ADDNEW_TODO, GETALL_TODO } from './actionType.js';
 const API_URL = 'http://localhost:8000';
 export const addNewTodo = (data) => async (dispatch) => {
     try {
@@ -7,5 +7,14 @@ export const addNewTodo = (data) => async (dispatch) => {
         dispatch({ type: ADDNEW_TODO, payload: res.data })
     } catch (error) {
         console.log("Error while calling addNewTodo", error.messasge);
+    }
+}
+
+export const getAllTodo = ()=>async(dispatch)=>{
+    try {
+        const res = await axios.get(`${API_URL}/todos`);
+        dispatch({ type: GETALL_TODO, payload: res.data })
+    } catch (error) {
+        console.log("Error while calling getAllTodo", error.messasge);
     }
 }
