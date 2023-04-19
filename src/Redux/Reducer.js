@@ -1,6 +1,6 @@
 import { ADDNEW_TODO, GETALL_TODO, UPDATE_TODO, TOGGLE_TODO, DELETE_TODO } from "./actionType.js";
 
-export const todoReducer = (state = [], action) => {
+export const todosReducer = (state = [], action) => {
     switch (action.type) {
         case ADDNEW_TODO:
             return [action.payload, ...state]

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { addNewTodo } from '../Redux/action';
+import { addNewTodo } from '../Redux/Action';
 import { useDispatch } from 'react-redux';
 export default function TodoForm() {
     const [text, setText] = useState("");
@@ -8,7 +8,7 @@ export default function TodoForm() {
         e.preventDefault();
         dispatch(addNewTodo(text));
         setText("");
-    }
+    } 
     const onInputChange = (e) => {
         setText(e.target.value);
     }
