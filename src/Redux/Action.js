@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ADDNEW_TODO, DELETE_TODO, GETALL_TODO, TOGGLE_TAB, TOGGLE_TODO, UPDATE_TODO } from './actionType.js';
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://todo-backend-server-raobaba.onrender.com';
 export const addNewTodo = (data) => async (dispatch) => {
     try {
         const res = await axios.post(`${API_URL}/todos`, { data });
