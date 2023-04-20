@@ -1,4 +1,4 @@
-import { ADDNEW_TODO, GETALL_TODO, UPDATE_TODO, TOGGLE_TODO, DELETE_TODO } from "./actionType.js";
+import { ADDNEW_TODO, GETALL_TODO, UPDATE_TODO, TOGGLE_TODO, DELETE_TODO, ALL_TODOS, TOGGLE_TAB } from "./actionType.js";
 
 export const todosReducer = (state = [], action) => {
     switch (action.type) {
@@ -17,6 +17,15 @@ export const todosReducer = (state = [], action) => {
         case DELETE_TODO:
             return state.filter(todo => todo._id !== action.payload._id);
 
+        default:
+            return state;
+    }
+}
+
+export const tabReducer = (state = ALL_TODOS, action) => {
+    switch (action.type) {
+        case TOGGLE_TAB:
+            return action.selected
         default:
             return state;
     }

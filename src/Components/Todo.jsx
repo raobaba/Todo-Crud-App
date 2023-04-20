@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { toggleTodo,updateTodo,deleteTodo } from '../Redux/Action';
+import { toggleTodo, updateTodo, deleteTodo } from '../Redux/Action';
 import { useDispatch } from 'react-redux';
 export default function Todo({ todo }) {
     const [editing, setEditing] = useState(false);
@@ -37,7 +37,7 @@ export default function Todo({ todo }) {
                     onChange={(e) => setText(e.target.value)}
                 />
             </form>
-            <span className="icon" onClick={()=>dispatch(deleteTodo(todo._id))}>
+            <span className="icon" onClick={() => dispatch(deleteTodo(todo._id))}>
                 <i className="fas fa-trash" />
             </span>
             <span className="icon" onClick={() => setEditing(preState => !preState)}>
